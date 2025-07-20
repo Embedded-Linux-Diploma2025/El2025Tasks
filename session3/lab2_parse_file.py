@@ -1,7 +1,7 @@
 """File Parsing Problems - Testing student capability with file parsing and text processing."""
 
 import os
-
+import re
 
 def parse_config_file(file_path):
     r"""
@@ -17,6 +17,27 @@ def parse_config_file(file_path):
     pattern = r'^([A-Z_][A-Z0-9_:${}]*)\s*=\s*"([^"]*(?:\\[\s\S]*?)*)"'
 
     """
+    config_dict={}
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"File Not Found!!: {file_path}")
+    pattern = r'^([A-Z_][A-Z0-9_:${}]*)\s*=\s*"([^"]*(?:\\[\s\S]*?)*)"'
+    with open(file_path , "rt", encoding="utf-8") as file:
+        for line in file:
+            line = line.strip()
+            # print(line)
+            if not line or line.startswith('#'):
+                continue
+            match = re.match(pattern, line)
+            if match:
+                key, value = match.groups()
+                config_dict[key]=value
+    file.close()
+    return config_dict
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+template_file = os.path.join(current_dir, "template_data.txt")
+result = parse_config_file(template_file)
+print(result)
 
 
 if __name__ == "__main__":
