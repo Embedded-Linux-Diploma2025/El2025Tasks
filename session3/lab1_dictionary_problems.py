@@ -13,10 +13,10 @@ def dictionary_operations(dict1:dict, dict2:dict)->dict:
     # Write your solution here
     mer = dict1 | dict2
     comm_k= set(dict1).intersection(dict2)
-    uni_k1=set(dict1).difference(dict2) 
+    uni_k1=set(dict1).difference(dict2)
     uni_k2=set(dict2).difference(dict1)
     uni_k= set(uni_k1).union(uni_k2)
-    dicti=dict(merged= mer, common_keys= comm_k , unique_keys= uni_k )
+    dicti = {"merged": mer, "common_keys": comm_k , "unique_keys": uni_k}
     return dicti
 
 
@@ -46,7 +46,7 @@ def dictionary_filtering(students_grades:dict):
     Returns:
         dict: Dictionary with students who have grades >= 70
     """
-    # Write your solution 
+    # Write your solution
     overseventy={}
     for grade in students_grades:
         if students_grades[grade] >= 70 :
