@@ -3,7 +3,13 @@
 
 def compute(number):
     """write your soulution Here Sum 1 … n — Compute and display the running total."""
-
+    accu = 0
+    i = 1
+    while i <= number:
+        accu+=i
+        print(f"Running total after adding {i}: {accu}")
+        i+=1
+    return accu
 
 if __name__ == "__main__":
     assert compute(5) == 15, "Test case failed"

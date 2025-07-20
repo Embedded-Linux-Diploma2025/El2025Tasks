@@ -5,7 +5,7 @@ import os
 
 def access_env(env_var):
     """Write your solution here. Don't forget to return the result at the end."""
-
+    return os.environ[env_var]
 
 if __name__ == "__main__":
     os.environ["TEST1234"] = "test_value"
