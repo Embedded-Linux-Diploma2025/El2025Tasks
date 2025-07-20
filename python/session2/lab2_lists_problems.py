@@ -11,7 +11,19 @@ def find_max_min(numbers):
         tuple: (max_value, min_value)
     """
     # Write your solution here
-
+    # solution like c
+    # max_elem = numbers[0]
+    # min_elem = numbers[0]
+    # for element in numbers:
+    #     if element > max_elem:
+    #         max_elem = element
+    #     elif element < min_elem:
+    #         min_elem = element
+    # solution 2
+    max_elem = max(numbers)
+    min_elem = min(numbers)
+    ret = (max_elem, min_elem)
+    return ret
 
 def reverse_list(items):
     """Reverse a list without using built-in reverse() method.
@@ -23,7 +35,10 @@ def reverse_list(items):
         list: Reversed list
     """
     # Write your solution here
-
+    reversed_list = []
+    for element in range(len(items), 0, -1):
+        reversed_list.append(element)
+    return reversed_list
 
 def list_statistics(numbers):
     """Calculate basic statistics for a list of numbers.
@@ -35,7 +50,11 @@ def list_statistics(numbers):
         dict: Dictionary with sum, average, count
     """
     # Write your solution here
-
+    list_sum = sum(numbers)
+    list_length = len(numbers)
+    list_average = list_sum / list_length
+    ret_dic = {"sum":list_sum, "average":list_average, "count": list_length}
+    return ret_dic
 
 def flatten_nested_list(nested_list):
     """Flatten a nested list structure.
@@ -47,7 +66,13 @@ def flatten_nested_list(nested_list):
         list: Flattened list
     """
     # Write your solution here
-
+    new_list = []
+    for element in nested_list:
+        if isinstance(element, int):
+            new_list.append(element)
+        else:
+            new_list.extend(flatten_nested_list(element))
+    return new_list
 
 if __name__ == "__main__":
     # Test cases

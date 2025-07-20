@@ -1,8 +1,9 @@
 """Write a Python program to test whether a passed letter is a vowel or not."""
 
-
+vowel_set = {'A','E','I','O','U','a','e','i','o','u'}
 def vowel(letter):
     """Write your solution here. Don't forget to return the result at the end."""
+    return letter in vowel_set
 
 
 if __name__ == "__main__":

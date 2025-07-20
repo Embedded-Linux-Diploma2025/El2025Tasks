@@ -12,6 +12,15 @@ def set_operations(set1: set, set2: set):
         dict: Dictionary with union, intersection, difference
     """
     # Write your solution here
+    union_set = set1.union(set2)
+    intersection_set = set1.intersection(set2)
+    difference_set = set1.difference(set2)
+    return_dic = {}
+    return_dic["union"] = union_set
+    return_dic["intersection"] = intersection_set
+    return_dic["difference"] = difference_set
+    return return_dic
+
 
 
 def find_unique_elements(list1, list2):
@@ -25,7 +34,12 @@ def find_unique_elements(list1, list2):
         tuple: (unique_to_list1, unique_to_list2)
     """
     # Write your solution here
-
+    set1 = set(list1)
+    set2 = set(list2)
+    unique_to_list1 = list(set1.difference(set2))
+    unique_to_list2 = list(set2.difference(set1))
+    return_typle = (set(unique_to_list1), set(unique_to_list2))
+    return return_typle
 
 def remove_vowels_set(text):
     """Remove vowels from text using set operations.
@@ -37,7 +51,11 @@ def remove_vowels_set(text):
         str: Text with vowels removed
     """
     # Write your solution here
-
+    set1 = set(text)
+    vowels_set = {'a','e','i','o','u','A','E','I','O','U'}
+    non_vowels_set = set1.difference(vowels_set)
+    text2 = ''.join(non_vowels_set)
+    return text2
 
 if __name__ == "__main__":
     # Test cases

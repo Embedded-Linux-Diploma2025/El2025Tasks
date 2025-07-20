@@ -12,7 +12,19 @@ def dictionary_operations(dict1, dict2):
         dict: Dictionary with merged, common_keys, and unique_keys
     """
     # Write your solution here
-
+    return_dic = {}
+    list_tuples = dict2.items()
+    merged_dic = dict1.copy()
+    merged_dic.update(list_tuples)
+    keys1 = set(dict1.keys())
+    keys2 = set(dict2.keys())
+    common_keys = keys1.intersection(keys2)
+    unique_keys = keys1.difference(keys2)
+    unique_keys.update(keys2.difference(keys1))
+    return_dic["merged"] = merged_dic
+    return_dic["common_keys"] = common_keys
+    return_dic["unique_keys"] = unique_keys
+    return return_dic
 
 def count_word_frequency(text):
     """Count the frequency of each word in a text string.
@@ -24,7 +36,11 @@ def count_word_frequency(text):
         dict: Dictionary with word frequencies
     """
     # Write your solution here
-
+    return_dic = {}
+    list_words = text.split()
+    for element in list_words:
+        return_dic[element] = list_words.count(element)
+    return return_dic
 
 def dictionary_filtering(students_grades):
     """Filter students based on their grades.
@@ -36,7 +52,11 @@ def dictionary_filtering(students_grades):
         dict: Dictionary with students who have grades >= 70
     """
     # Write your solution here
-
+    return_dic = {}
+    for student in students_grades:
+        if students_grades[student] >= 70:
+            return_dic[student] = students_grades[student]
+    return return_dic
 
 def nested_dictionary_access(nested_dict, keys_path):
     """Access value in nested dictionary using a list of keys.
@@ -49,7 +69,13 @@ def nested_dictionary_access(nested_dict, keys_path):
         any: Value at the specified path, or None if path doesn't exist
     """
     # Write your solution here
-
+    updated_dic = nested_dict
+    for key in keys_path:
+        if isinstance(updated_dic, dict) and key in updated_dic:
+            updated_dic = updated_dic[key]
+        else:
+            return None
+    return updated_dic
 
 if __name__ == "__main__":
     # Test cases

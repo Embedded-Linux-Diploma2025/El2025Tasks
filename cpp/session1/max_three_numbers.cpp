@@ -2,8 +2,10 @@
 #include <iostream>
 
 int getMaximum(int a, int b, int c) {
-  // write your solution here...
-  return 0;
+  int max{0};
+  max = a > b? a: b;
+  max = max > c? max: c;
+  return max;
 }
 
 int main() {
