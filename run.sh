@@ -34,7 +34,7 @@ fi
 python session3/lab1_dictionary_problems.py
 if [ $? -ne 0 ]; then
     echo "[🟥] Session 3 is not solved yet"
-    # exit 1 # comment this line if you want to bypass session3
+    exit 1 # comment this line if you want to bypass session3
 else
     examine_session "session3"
 fi
