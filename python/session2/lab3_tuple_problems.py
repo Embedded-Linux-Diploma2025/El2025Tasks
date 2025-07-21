@@ -12,6 +12,7 @@ def tuple_operations(tuple1, tuple2):
         dict: Dictionary with concatenation, repetition,
     """
     # Write your solution here
+    return {'concatenation':tuple1 + tuple2 ,'repetition': tuple1 + tuple1}
 
 
 def find_tuple_stats(numbers_tuple):
@@ -24,6 +25,7 @@ def find_tuple_stats(numbers_tuple):
         tuple: (sum, max, min, length)
     """
     # Write your solution here
+    return (sum(numbers_tuple),max(numbers_tuple),min(numbers_tuple),len(numbers_tuple))
 
 
 def count_elements_in_tuple(data_tuple, element):
@@ -37,6 +39,7 @@ def count_elements_in_tuple(data_tuple, element):
         int: Number of occurrences
     """
     # Write your solution here
+    return data_tuple.count(element)
 
 
 def tuple_indexing_slicing(data_tuple):
@@ -49,6 +52,7 @@ def tuple_indexing_slicing(data_tuple):
         dict: Dictionary with various slicing results
     """
     # Write your solution here
+    return {'first_element':data_tuple[0],'last_element':data_tuple[-1]}
 
 
 if __name__ == "__main__":
@@ -74,6 +78,7 @@ if __name__ == "__main__":
 
     print("Testing tuple_indexing_slicing...")
     result = tuple_indexing_slicing((0, 1, 2, 3, 4, 5, 6, 7, 8, 9))
+    # print(result)
     assert "first_element" in result, "Should contain first_element"
     assert "last_element" in result, "Should contain last_element"
     assert result["first_element"] == 0, f"Expected first_element 0, got {result['first_element']}"

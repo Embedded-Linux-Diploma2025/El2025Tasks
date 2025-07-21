@@ -1,10 +1,17 @@
 #include <cassert>
 #include <iostream>
-
+char vowels[10] = {'a', 'e', 'i', 'o', 'u' ,'A', 'E', 'I', 'O', 'U' };
 bool isVowel(char letter) {
   // write your solution here...
   // Hint: Check if the letter is 'a', 'e', 'i', 'o', 'u' (both uppercase and
   // lowercase)
+  for (int i =0;i <10;i++)
+  {
+    if (letter == vowels[i])
+    {
+      return true;
+    }
+  }
   return false;
 }
 
