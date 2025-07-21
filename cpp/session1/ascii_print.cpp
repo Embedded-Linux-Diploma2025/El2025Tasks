@@ -5,6 +5,7 @@
 
 int getASCIIValue(char character) {
   // write your solution here...
+  std::cout<<"Welcome"<<std::endl;
   return int(character);
 }
 
