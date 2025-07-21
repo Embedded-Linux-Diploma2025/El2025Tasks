@@ -5,6 +5,14 @@ int sumDigits(int number) {
   // write your solution here...
   // Hint: Use modulo (%) to get last digit and division (/) to remove last
   // digit Hint: Handle negative numbers appropriately
+  int sum{};
+  number = abs(number);
+  while(number > 0){
+    int digit = number%10;
+    number /= 10;
+    sum += digit;
+  }
+  return sum;
   return 0;
 }
 

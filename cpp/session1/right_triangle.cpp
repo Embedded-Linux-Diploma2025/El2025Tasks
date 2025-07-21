@@ -5,6 +5,9 @@
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
+  int arr[3] = {a,b,c};
+  std::sort(arr,arr+3);
+  return arr[0] * arr[0] + arr[1] * arr[1] == arr[2] * arr[2];
   return 0;
 }
 
