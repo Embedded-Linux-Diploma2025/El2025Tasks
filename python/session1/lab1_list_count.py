@@ -3,7 +3,6 @@
 
 def count(lst):
     """Write your solution here. Don't forget to return the result at the end."""
-    print("Welcome")
     return lst.count(4)
 
 
