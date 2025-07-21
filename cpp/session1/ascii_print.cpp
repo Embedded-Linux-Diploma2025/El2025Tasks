@@ -6,7 +6,6 @@
 int getASCIIValue(char character) {
   // write your solution here...
   return static_cast<int>(character);
-  return 0;
 }
 
 int main() {

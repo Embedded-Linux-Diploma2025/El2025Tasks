@@ -7,7 +7,6 @@ bool isVowel(char letter) {
   // lowercase)
   letter = tolower(letter);
   return (letter == 'a' || letter == 'e'||letter == 'i'||letter == 'o'||letter == 'u');
-  return false;
 }
 
 int main() {

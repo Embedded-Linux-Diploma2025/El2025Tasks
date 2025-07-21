@@ -13,7 +13,6 @@ int sumDigits(int number) {
     sum += digit;
   }
   return sum;
-  return 0;
 }
 
 int main() {

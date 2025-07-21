@@ -8,7 +8,6 @@ bool isRightTriangle(int a, int b, int c) {
   int arr[3] = {a,b,c};
   std::sort(arr,arr+3);
   return arr[0] * arr[0] + arr[1] * arr[1] == arr[2] * arr[2];
-  return 0;
 }
 
 int main() {

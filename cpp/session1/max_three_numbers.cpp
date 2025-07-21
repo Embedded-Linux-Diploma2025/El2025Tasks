@@ -5,7 +5,6 @@ int getMaximum(int a, int b, int c) {
   // write your solution here...
   int temp = std::max(a,b);
   return std::max(c,temp);
-  return 0;
 }
 
 int main() {
