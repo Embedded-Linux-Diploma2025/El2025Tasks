@@ -9,7 +9,7 @@ examine_session() {
             echo "[🟥] Error running pylint for $file"
             exit 1
         fi
-        python3 "$file"
+        python "$file"
         if [ $? -ne 0 ]; then
             echo "[🟥] Error running $file"
             exit 1
@@ -22,13 +22,12 @@ examine_session() {
 #----------------- Session 1 -----------------#
 examine_session "python/session1"
 #----------------- Session 2 -----------------#
-pip install requests
 python python/session2/lab1_get_your_location.py
 if [ $? -ne 0 ]; then
     echo "[🟥] Session 2 is not Solved yet"
     exit 1
 else
-    examine_session "session2"
+    examine_session "python/session2"
 fi
 
 #----------------- Session 3 -----------------#
