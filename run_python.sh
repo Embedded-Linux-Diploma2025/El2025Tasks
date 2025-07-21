@@ -22,7 +22,6 @@ examine_session() {
 #----------------- Session 1 -----------------#
 examine_session "python/session1"
 #----------------- Session 2 -----------------#
-pip install requests
 python python/session2/lab1_get_your_location.py
 if [ $? -ne 0 ]; then
     echo "[🟥] Session 2 is not Solved yet"
