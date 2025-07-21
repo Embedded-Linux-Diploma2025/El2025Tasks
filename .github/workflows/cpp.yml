@@ -1,0 +1,48 @@
+name: C++ Build and Test
+
+
+on:
+  push:
+    paths:
+      - 'cpp/**'
+  pull_request:
+    paths:
+      - 'cpp/**'
+
+jobs:
+  cpp-build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install C++ build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential g++
+
+      - name: Check C++ compiler version
+        run: |
+          g++ --version
+          echo "C++ Standard Library version:"
+
+
+      - name: Compile and test C++ projects
+        run: |
+          chmod +x run_cpp.sh
+          ./run_cpp.sh
+
+    #   - name: Run static analysis (cppcheck)
+    #     run: |
+    #       sudo apt-get install -y cppcheck
+    #       echo "🔍 Running static analysis on C++ files..."
+    #       find c++/ -name "*.cpp" -exec cppcheck --enable=all --inconclusive --std=c++17 {} \;
+    #     continue-on-error: true
+
+    #   - name: Check code formatting (clang-format)
+    #     run: |
+    #       sudo apt-get install -y clang-format
+    #       echo "📝 Checking C++ code formatting..."
+    #       find c++/ -name "*.cpp" -exec clang-format --dry-run --Werror {} \;
+    #     continue-on-error: true
