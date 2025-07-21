@@ -15,8 +15,6 @@ def set_operations(set1: set, set2: set):
     union_set = set1.union(set2)
     intersection_set = set1.intersection(set2)
     difference_set = set1.difference(set2)
-    
-    
     result_set = {
         "union":        union_set,
         "intersection": intersection_set,
@@ -45,7 +43,6 @@ def find_unique_elements(list1, list2):
     # print(unique_to_list1)
     unique_to_list2 = set2.difference(set1)
     # print(unique_to_list2)
-    
     return unique_to_list1,unique_to_list2
 
 
@@ -65,7 +62,6 @@ def remove_vowels_set(text):
     for char in text:
         if char.lower() not in vowels:
             text_modified += char
-    
     return text_modified
 
 if __name__ == "__main__":

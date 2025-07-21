@@ -13,8 +13,6 @@ def find_max_min(numbers):
     # Write your solution here
     numbers.sort()
     return (numbers[-1], numbers[0])
-    
-
 
 def reverse_list(items):
     """Reverse a list without using built-in reverse() method.
@@ -39,21 +37,17 @@ def list_statistics(numbers):
         dict: Dictionary with sum, average, count
     """
     # Write your solution here
-    sum = 0
+    numbers_sum = 0
     for num in numbers:
-        sum +=num
+        numbers_sum +=num
     count = len(numbers)
-    average = sum/count
+    average = numbers_sum/count
     statistics = {
-        "sum" : sum,
+        "sum" : numbers_sum,
         "average": average,
         "count": count
     }
     return statistics
-    # print(sum) 
-    # print(average) 
-    
-    
 
 def flatten_nested_list(nested_list):
     """Flatten a nested list structure.
@@ -65,14 +59,12 @@ def flatten_nested_list(nested_list):
         list: Flattened list
     """
     # Write your solution here
-    new_list = list()
+    new_list = []
     for mylist in nested_list: #loop over each nested list
         for item in mylist:
             new_list.append(item)
     # print(new_list)
     return new_list
-        
-
 
 if __name__ == "__main__":
     # Test cases

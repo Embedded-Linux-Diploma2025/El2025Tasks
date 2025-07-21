@@ -16,11 +16,11 @@ def tuple_operations(tuple1, tuple2):
     # print(dict_conc)
     dict_rep = tuple1 * 2
     # print(dict_rep)
-    dict = {
+    dict_result = {
         "concatenation": dict_conc,
         "repetition": dict_rep
     }
-    return dict
+    return dict_result
 
 
 def find_tuple_stats(numbers_tuple):
@@ -36,24 +36,24 @@ def find_tuple_stats(numbers_tuple):
     # print(type(numbers_tuple))
     # print(numbers_tuple)
     # calc sum
-    sum = 0
+    tuple_sum = 0
     for num in numbers_tuple:
-        sum+=num
-    # print(sum) #test
+        tuple_sum+=num
+    # print(tuple_sum) #test
     # calc: max and min, sort the tuple
     sorted_tuple = sorted(numbers_tuple)
     # print(sorted_tuple)
     # calc: max
-    max: int = sorted_tuple[-1]
+    tuple_max: int = sorted_tuple[-1]
     # print(sorted_tuple[-1])
     # calc: min
-    min: int = sorted_tuple[0]
+    tuple_min: int = sorted_tuple[0]
     # print(sorted_tuple[0])
     # calc: lenght
-    length: int = len(numbers_tuple)
-    # print(length)
-    result = (sum, max, min, length)
-    return result
+    tuple_length: int = len(numbers_tuple)
+    # print(tuple_length)
+    tuple_result = (tuple_sum, tuple_max, tuple_min, tuple_length)
+    return tuple_result
 
 
 def count_elements_in_tuple(data_tuple, element):
@@ -82,13 +82,13 @@ def tuple_indexing_slicing(data_tuple):
     # Write your solution here
     first = data_tuple[0]
     last = data_tuple[-1]
-    reversed = data_tuple[::-1]
-    result = {
+    tuple_reversed = data_tuple[::-1]
+    data_result = {
             "first_element": first,          # first item
             "last_element": last,            # last item
-            "reversed": reversed             # reversed tuple
+            "reversed": tuple_reversed             # reversed tuple
         }
-    return result
+    return data_result
 
 if __name__ == "__main__":
     # Test cases
