@@ -2,10 +2,18 @@
 #include <iostream>
 
 int sumDigits(int number) {
+  if(number < 0) {
+    number = -number; // Handle negative numbers by taking absolute value
+  }
+  int sum = 0;
+  while (number > 0) {
+    sum += number % 10; // Add last digit to sum
+    number /= 10;       // Remove last digit from number
+  }
+  return sum; // Return the total sum of digits
   // write your solution here...
   // Hint: Use modulo (%) to get last digit and division (/) to remove last
   // digit Hint: Handle negative numbers appropriately
-  return 0;
 }
 
 int main() {

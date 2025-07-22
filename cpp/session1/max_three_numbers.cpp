@@ -2,8 +2,14 @@
 #include <iostream>
 
 int getMaximum(int a, int b, int c) {
-  // write your solution here...
-  return 0;
+  // Compare a with b and c to find the maximum
+  if (a >= b && a >= c) {
+    return a; // a is the maximum
+  } else if (b >= a && b >= c) {
+    return b; // b is the maximum
+  } else {
+    return c; // c is the maximum
+  }
 }
 
 int main() {

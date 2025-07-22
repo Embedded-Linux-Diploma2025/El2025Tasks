@@ -4,7 +4,20 @@
 
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
+  // Sort the sides to ensure c is the largest side
+  int sides[3] = {a, b, c};
+  std::sort(sides, sides + 3);
+  a = sides[0];
+  b = sides[1];
+  c = sides[2];
+  // Check if the triangle inequality holds
+  if (a + b <= c) {
+    return false; // Not a valid triangle
+  }
+  // Check if it satisfies the Pythagorean theorem
+  return (a * a + b * b == c * c); // a² +
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
+  
   return 0;
 }
 

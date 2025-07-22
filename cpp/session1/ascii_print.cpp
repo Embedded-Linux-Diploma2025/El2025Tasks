@@ -4,8 +4,12 @@
 #include <string>
 
 int getASCIIValue(char character) {
-  // write your solution here...
-  return 0;
+  // Check if the character is a valid ASCII character
+  if (character < 0 || character > 127) {
+    std::cerr << "Error: Character '" << character << " is not a valid ASCII";
+    return -1; // Return -1 for invalid characters
+  }
+  return static_cast<int>(character);
 }
 
 int main() {
