@@ -1,4 +1,4 @@
-fruits = ["apple", "banana", "orange"]
-
-for i, fruit in enumerate(fruits):
-    print(f"{i}: {fruit}")
+thisset={"orange","banana","grape","orange"}
+print(thisset)
+thisset.update(["orange","mango","kiwi"])
+print(thisset)
