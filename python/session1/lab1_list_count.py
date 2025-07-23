@@ -3,6 +3,10 @@
 
 def count(lst):
     """Write your solution here. Don't forget to return the result at the end...."""
+    result = 0
+    if lst is not None:
+        result = lst.count(4)
+    return result
 
 
 if __name__ == "__main__":
