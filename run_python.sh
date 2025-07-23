@@ -19,6 +19,7 @@ examine_session() {
     cd ../..
 }
 
+pip3 install -r requirements.txt
 #----------------- Session 1 -----------------#
 examine_session "python/session1"
 #----------------- Session 2 -----------------#
