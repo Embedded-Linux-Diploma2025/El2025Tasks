@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """List Problems - Testing student capability with list operations."""
 
 

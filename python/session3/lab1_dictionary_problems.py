@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Dictionary Problems - Testing student capability with dictionary operations."""
 
 
