@@ -24,7 +24,7 @@ def parse_config_file(file_path):
 #    fd=open(file_path)
 #    fd_string=fd.read()
 #    fd.close()
-    with open(file_path,encoding=str) as fd:
+    with open(file_path,encoding="utf-8") as fd:
         fd_string=fd.read()
     matches = re.findall(pattern, fd_string, re.MULTILINE)
     print(matches)
