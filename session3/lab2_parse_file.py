@@ -27,7 +27,6 @@ def parse_config_file(file_path):
                 key = new_text[0].strip()
                 value  = new_text[1].replace('"','').strip()
                 dictionary[key] = value
-        file.close()
     return dictionary
 
 
