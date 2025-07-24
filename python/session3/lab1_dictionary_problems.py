@@ -1,7 +1,7 @@
 """Dictionary Problems - Testing student capability with dictionary operations."""
 
 
-def dictionary_operations(dict1, dict2):
+def dictionary_operations(dict1: dict, dict2: dict):
     """Perform basic operations on two dictionaries.
 
     Args:
@@ -12,9 +12,16 @@ def dictionary_operations(dict1, dict2):
         dict: Dictionary with merged, common_keys, and unique_keys
     """
     # Write your solution here
+    s_1=set(dict1.keys())
+    s_2=set(dict2.keys())
+    set_common=s_1.intersection(s_2)
+    set_diff=set(dict1.keys()).symmetric_difference(dict2.keys())
+    dict_merg=dict1
+    dict_merg.update(dict2)
+    return {"merged":dict_merg,"common_keys":set_common,"unique_keys":set_diff}
 
 
-def count_word_frequency(text):
+def count_word_frequency(text: str):
     """Count the frequency of each word in a text string.
 
     Args:
@@ -24,9 +31,16 @@ def count_word_frequency(text):
         dict: Dictionary with word frequencies
     """
     # Write your solution here
+    words_list=text.split(' ')
+    words_set=set(words_list)
+    word_freq={}
+    for i in words_set:
+        dict_word={i:words_list.count(i)}
+        word_freq.update(dict_word)
+    return word_freq
 
 
-def dictionary_filtering(students_grades):
+def dictionary_filtering(students_grades: dict):
     """Filter students based on their grades.
 
     Args:
@@ -36,6 +50,11 @@ def dictionary_filtering(students_grades):
         dict: Dictionary with students who have grades >= 70
     """
     # Write your solution here
+    hi_mark_students={}
+    for i in students_grades:
+        if students_grades[i] >= 70 :
+            hi_mark_students.update({i:students_grades[i]})
+    return hi_mark_students
 
 
 def nested_dictionary_access(nested_dict, keys_path):
@@ -49,6 +68,10 @@ def nested_dictionary_access(nested_dict, keys_path):
         any: Value at the specified path, or None if path doesn't exist
     """
     # Write your solution here
+    trgt_value=nested_dict
+    for i in keys_path:
+        trgt_value=trgt_value.get(i)
+    return trgt_value
 
 
 if __name__ == "__main__":
