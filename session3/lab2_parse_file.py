@@ -10,13 +10,25 @@ def parse_config_file(file_path):
     {
         "SUMMARY": "hello python",
         "LICENSE": CLOSED,"
-        "SRC_URI": "file://sd-hello.py", "
+        "SRC_URI": "file://sd-hello.py",
         "RDEPENDS:${PN}": "python3",
     }
     if you intend to use regex you can use this pattern
     pattern = r'^([A-Z_][A-Z0-9_:${}]*)\s*=\s*"([^"]*(?:\\[\s\S]*?)*)"'
 
     """
+    file = open(file_path, 'r')
+    text = file.read()
+    split_text = text.splitlines("")
+    dictionary = {}
+    for i in  split_text:
+        new_text = i.split("=")
+        if len(new_text) == 2 :
+            key = new_text[0].strip()
+            value  = new_text[1].replace('"','').strip()
+            dictionary[key] = value
+    return dictionary
+
 
 
 if __name__ == "__main__":
@@ -28,7 +40,7 @@ if __name__ == "__main__":
     # Test assertions
     print("Checking SUMMARY...")
     assert "SUMMARY" in result, "SUMMARY key not found in result"
-    assert result["SUMMARY"] == " hello python", f"Expected ' hello python', got {result['SUMMARY']}"
+    assert result["SUMMARY"] == "hello python", f"Expected ' hello python', got {result['SUMMARY']}"
 
     print("Checking LICENSE...")
     assert "LICENSE" in result, "LICENSE key not found in result"
@@ -45,7 +57,7 @@ if __name__ == "__main__":
 
     print("Checking RDEPENDS...")
     assert "RDEPENDS:${PN}" in result, "RDEPENDS:${PN} key not found in result"
-    assert result["RDEPENDS:${PN}"] == "python3 ", f"Expected 'python3 ', got '{result['RDEPENDS:${PN}']}'"
+    assert result["RDEPENDS:${PN}"] == "python3", f"Expected 'python3 ', got '{result['RDEPENDS:${PN}']}'"
 
     # Check that function definitions and inherit statements are not included
     print("Checking that function definitions are excluded...")
