@@ -17,16 +17,17 @@ def parse_config_file(file_path):
     pattern = r'^([A-Z_][A-Z0-9_:${}]*)\s*=\s*"([^"]*(?:\\[\s\S]*?)*)"'
 
     """
-    file = open(file_path, 'r')
-    text = file.read()
-    split_text = text.splitlines("")
-    dictionary = {}
-    for i in  split_text:
-        new_text = i.split("=")
-        if len(new_text) == 2 :
-            key = new_text[0].strip()
-            value  = new_text[1].replace('"','').strip()
-            dictionary[key] = value
+    with open(file_path, "r",encoding="utf-8") as file:
+        text = file.read()
+        split_text = text.splitlines("")
+        dictionary = {}
+        for i in  split_text:
+            new_text = i.split("=")
+            if len(new_text) == 2 :
+                key = new_text[0].strip()
+                value  = new_text[1].replace('"','').strip()
+                dictionary[key] = value
+        file.close()
     return dictionary
 
 
@@ -48,8 +49,8 @@ if __name__ == "__main__":
 
     print("Checking SRC_URI...")
     assert "SRC_URI" in result, "SRC_URI key not found in result"
-    EXPECTED_SRC_URI = "file://sd-hello.py"
-    assert result["SRC_URI"] == EXPECTED_SRC_URI, f"Expected {EXPECTED_SRC_URI}, got {result['SRC_URI']}"
+    EXPECT_SRC_URI = "file://sd-hello.py"
+    assert result["SRC_URI"] == EXPECT_SRC_URI, f"Expected {EXPECT_SRC_URI},got {result['SRC_URI']}"
 
     print("Checking S variable...")
     assert "S" in result, "S key not found in result"
@@ -57,18 +58,18 @@ if __name__ == "__main__":
 
     print("Checking RDEPENDS...")
     assert "RDEPENDS:${PN}" in result, "RDEPENDS:${PN} key not found in result"
-    assert result["RDEPENDS:${PN}"] == "python3", f"Expected 'python3 ', got '{result['RDEPENDS:${PN}']}'"
+    assert result["RDEPENDS:${PN}"] == "python3",f"Expect'python3', got'{result['RDEPENDS:${PN}']}'"
 
     # Check that function definitions and inherit statements are not included
     print("Checking that function definitions are excluded...")
     for _key in result:
-        assert not _key.startswith("do_install"), "Function definition should not be parsed as a _key"
+        assert not _key.startswith("do_install"), "Function should not be parsed as a _key"
         assert _key != "inherit", "inherit statement should not be parsed as a key"
 
     # Verify expected number of keys
     print("Checking total number of parsed keys...")
-    expected_keys = {"SUMMARY", "LICENSE", "SRC_URI", "S", "RDEPENDS:${PN}"}
-    assert len(result) == len(expected_keys), f"Expected {len(expected_keys)} keys, got {len(result)}"
-    assert set(result.keys()) == expected_keys, f"Expected keys {expected_keys}, got {set(result.keys())}"
+    expect_keys = {"SUMMARY", "LICENSE", "SRC_URI", "S", "RDEPENDS:${PN}"}
+    assert len(result) == len(expect_keys), f"Expected {len(expect_keys)} keys, got {len(result)}"
+    assert set(result.keys()) == expect_keys, f"Expect keys {expect_keys}, got {set(result.keys())}"
 
     print("All tests passed!")
