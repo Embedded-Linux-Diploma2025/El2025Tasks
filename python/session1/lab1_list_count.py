@@ -2,10 +2,19 @@
 
 
 def count(lst):
-    """Write your solution here. Don't forget to return the result at the end...."""
+    """Write your solution here. Don't forget to return the result at the end."""
+    count_of_4=0
+    for idx , val in enumerate(lst):
+        del idx
+        if val==4:
+            count_of_4+=1
+    # print("Total Count is : ", {count_of_4})
+    # print("End of count()")
+    return count_of_4
 
 
 if __name__ == "__main__":
+    # Test cases
     assert count([1, 2, 3, 4, 5, 4, 6]) == 2, "Test case failed"
     assert count([1, 2, 3, 5, 6]) == 0, "Test case failed"
     assert count([4, 4, 4, 4]) == 4, "Test case failed"

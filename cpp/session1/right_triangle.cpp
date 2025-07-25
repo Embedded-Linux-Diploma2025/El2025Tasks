@@ -23,7 +23,7 @@ bool isRightTriangle(int a, int b, int c) {
   }
   else{
     if(b>c){
-      if(b^2==(pow(c,2)+pow(a,2))){
+      if(pow(b,2)==(pow(c,2)+pow(a,2))){
         result=true;
       }
     }

@@ -1,7 +1,7 @@
 """Dictionary Problems - Testing student capability with dictionary operations."""
 
 
-def dictionary_operations(dict1, dict2):
+def dictionary_operations(dict1 : dict, dict2: dict):
     """Perform basic operations on two dictionaries.
 
     Args:
@@ -11,10 +11,11 @@ def dictionary_operations(dict1, dict2):
     Returns:
         dict: Dictionary with merged, common_keys, and unique_keys
     """
-    # Write your solution here
+    loc_dict = {"merged" : {**dict1 , **dict2}, "common_keys": {*dict2.keys()}.intersection({*dict1.keys()}), "unique_keys": {*dict1.keys()}.symmetric_difference({*dict2.keys()})}
+    return loc_dict
 
 
-def count_word_frequency(text):
+def count_word_frequency(text :str):
     """Count the frequency of each word in a text string.
 
     Args:
@@ -24,9 +25,22 @@ def count_word_frequency(text):
         dict: Dictionary with word frequencies
     """
     # Write your solution here
+    freq_dict={}
+    count=0
+    for word in text.split():
+        # print(freq_dict.get(word))
+
+        if freq_dict.get(word) is not None:
+            count=freq_dict.get(word)
+            freq_dict[word]=count+1
+        else:
+            freq_dict[word]=1
+        # print(word)
+        # print(count)
+    return freq_dict
 
 
-def dictionary_filtering(students_grades):
+def dictionary_filtering(students_grades : dict):
     """Filter students based on their grades.
 
     Args:
@@ -36,9 +50,15 @@ def dictionary_filtering(students_grades):
         dict: Dictionary with students who have grades >= 70
     """
     # Write your solution here
+    loop=students_grades.keys()
+    top_grade={}
+    for students in loop:
+        if students_grades.get(students) >= 70:
+            top_grade|= {students:students_grades.get(students)}
+    # print(top_grade)
+    return top_grade
 
-
-def nested_dictionary_access(nested_dict, keys_path):
+def nested_dictionary_access(nested_dict:dict, keys_path:list):
     """Access value in nested dictionary using a list of keys.
 
     Args:
@@ -49,6 +69,15 @@ def nested_dictionary_access(nested_dict, keys_path):
         any: Value at the specified path, or None if path doesn't exist
     """
     # Write your solution here
+    for k in keys_path:
+        if nested_dict.get(k) is not None:
+            if isinstance(nested_dict.get(keys_path[0]), dict):
+                # print(nested_dict.get(keys_path[0]))
+                # print(keys_path[1:])
+                return nested_dictionary_access(nested_dict.get(keys_path[0]),keys_path[1:])
+                # print(nested_dict.get(keys_path[0]))
+            return nested_dict.get(keys_path[0])
+        return None
 
 
 if __name__ == "__main__":
