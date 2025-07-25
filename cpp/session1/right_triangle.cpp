@@ -5,7 +5,21 @@
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  return 0;
+  bool result = false;
+
+  int sides[3] = {a, b, c};
+
+  std::sort(sides, (sides + 3));
+
+  long int side_a = sides[0] * sides[0];
+  long int side_b = sides[1] * sides[1];
+  long int side_c = sides[2] * sides[2];
+
+  if (side_c == (side_a + side_b)) {
+    result = true;
+  }
+
+  return result;
 }
 
 int main() {
@@ -35,7 +49,7 @@ int main() {
   // Test scaled Pythagorean triples
   assert(isRightTriangle(6, 8, 10) == true);   // 3-4-5 * 2
   assert(isRightTriangle(9, 12, 15) == true);  // 3-4-5 * 3
-  assert(isRightTriangle(10, 24, 26) == true); // 5-12-13 * 2
+  assert(isRightTriangle(10, 24, 26) == true);  // 5-12-13 * 2
 
   // Test non-right triangles
   assert(isRightTriangle(1, 2, 3) == false);
