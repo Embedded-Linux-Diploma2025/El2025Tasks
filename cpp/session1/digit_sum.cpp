@@ -1,11 +1,20 @@
 #include <cassert>
+#include <cstdlib>
 #include <iostream>
+#include <libintl.h>
 
 int sumDigits(int number) {
   // write your solution here...
   // Hint: Use modulo (%) to get last digit and division (/) to remove last
   // digit Hint: Handle negative numbers appropriately
-  return 0;
+  int newNumber = abs(number);
+  int total = 0;
+  while (newNumber != 0) {
+    int digit = newNumber % 10;
+    total += digit;
+    newNumber /= 10;
+  }
+  return total;
 }
 
 int main() {

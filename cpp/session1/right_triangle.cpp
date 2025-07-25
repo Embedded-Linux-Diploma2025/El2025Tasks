@@ -1,11 +1,19 @@
 #include <algorithm>
+#include <array>
 #include <cassert>
+#include <cmath>
 #include <iostream>
 
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  return 0;
+  std::array<int, 3> lengths= {a, b, c};
+  std::sort(lengths.begin(), lengths.end());
+  if((pow(lengths[0], 2) + pow(lengths[1], 2)) == pow(lengths[2], 2)){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 int main() {
