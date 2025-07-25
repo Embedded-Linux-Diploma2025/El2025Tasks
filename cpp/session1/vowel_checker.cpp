@@ -5,7 +5,25 @@ bool isVowel(char letter) {
   // write your solution here...
   // Hint: Check if the letter is 'a', 'e', 'i', 'o', 'u' (both uppercase and
   // lowercase)
-  return false;
+  bool result = false;
+  switch (std::tolower(letter)) {
+    case 'a':
+    /*fall through*/
+    case 'e':
+    /*fall through*/
+    case 'i':
+    /*fall through*/
+    case 'o':
+    /*fall through*/
+    case 'u':
+    result = true;
+    break;
+
+    default:
+    break;
+  }
+
+  return result;
 }
 
 int main() {
