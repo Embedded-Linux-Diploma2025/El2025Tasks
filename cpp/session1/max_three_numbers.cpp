@@ -1,25 +1,12 @@
 #include <cassert>
 #include <iostream>
 
+
 int getMaximum(int a, int b, int c) {
   // write your solution here...
-  int max;
-  if(a>b){
-    if(a>c){
-      max=a;
-    }
-    else{
-      max=c;
-    }
-  }
-  else{
-    if(b>c){
-      max=b;
-    }
-    else{
-      max=c;
-    }
-  }
+  int max=a;
+  if (b > max) max = b;
+  if (c > max) max = c;
   return max;
 }
 

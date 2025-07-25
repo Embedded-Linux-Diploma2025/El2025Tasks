@@ -8,32 +8,11 @@
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  bool result=false;
-  if(a>b){
-    if(a>c){
-      if(pow(a,2)==(pow(b,2)+pow(c,2))){
-        result=true;
-      }
-    }
-    else{
-      if(pow(c,2)==pow(b,2)+pow(a,2)){
-        result=true;
-      }
-    }
-  }
-  else{
-    if(b>c){
-      if(pow(b,2)==(pow(c,2)+pow(a,2))){
-        result=true;
-      }
-    }
-    else{
-      if(pow(c,2)==pow(b,2)+pow(a,2)){
-        result=true;
-      }
-    }
-  }
-  return result;
+  int sides[] = {a, b, c};
+  std::sort(sides, sides + 3);
+  if (sides[0] + sides[1] <= sides[2])
+    return false;
+  return sides[0] * sides[0] + sides[1] * sides[1] == sides[2] * sides[2];
 }
 
 int main() {
