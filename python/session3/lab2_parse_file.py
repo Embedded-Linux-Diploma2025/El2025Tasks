@@ -1,7 +1,7 @@
 """File Parsing Problems - Testing student capability with file parsing and text processing."""
 
 import os
-
+import re
 
 def parse_config_file(file_path):
     r"""
@@ -17,6 +17,21 @@ def parse_config_file(file_path):
     pattern = r'^([A-Z_][A-Z0-9_:${}]*)\s*=\s*"([^"]*(?:\\[\s\S]*?)*)"'
 
     """
+    file_lines = []
+    file_info = {}
+    try:
+        with open(file_path,encoding='utf-8') as f:
+            file_lines = f.readlines()
+    except IOError:
+        print("An Error occured while opening the file")
+    if len(file_lines) > 0:
+        key_val_pattern = r'^([A-Z_][A-Z0-9_:${}]*)\s*=\s*"([^"]*(?:\\[\s\S]*?)*)"'
+        for file_line in file_lines:
+            found_pattern = re.findall(key_val_pattern,file_line)
+            if len(found_pattern) > 0:
+                if isinstance(found_pattern[0],tuple) and len(found_pattern[0]) == 2:
+                    file_info[found_pattern[0][0]] = found_pattern[0][1]
+    return file_info
 
 
 if __name__ == "__main__":
