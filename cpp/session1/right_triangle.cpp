@@ -2,10 +2,38 @@
 #include <cassert>
 #include <iostream>
 
+#include <math.h>
+
+
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  return 0;
+  bool result=false;
+  if(a>b){
+    if(a>c){
+      if(pow(a,2)==(pow(b,2)+pow(c,2))){
+        result=true;
+      }
+    }
+    else{
+      if(pow(c,2)==pow(b,2)+pow(a,2)){
+        result=true;
+      }
+    }
+  }
+  else{
+    if(b>c){
+      if(b^2==(pow(c,2)+pow(a,2))){
+        result=true;
+      }
+    }
+    else{
+      if(pow(c,2)==pow(b,2)+pow(a,2)){
+        result=true;
+      }
+    }
+  }
+  return result;
 }
 
 int main() {

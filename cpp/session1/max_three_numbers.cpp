@@ -3,7 +3,24 @@
 
 int getMaximum(int a, int b, int c) {
   // write your solution here...
-  return 0;
+  int max;
+  if(a>b){
+    if(a>c){
+      max=a;
+    }
+    else{
+      max=c;
+    }
+  }
+  else{
+    if(b>c){
+      max=b;
+    }
+    else{
+      max=c;
+    }
+  }
+  return max;
 }
 
 int main() {
