@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#----------------- Dependency Installation -----------------#
+echo "[⚙️] Installing required Python packages..."
+pip install requests
+#-----------------------------------------------------------
+
+
 examine_session() {
     (
         local session_dir="$1"
