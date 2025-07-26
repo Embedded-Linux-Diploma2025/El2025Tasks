@@ -1,6 +1,12 @@
-name: Pylint
+name: Python
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'python/**'
+  pull_request:
+    paths:
+      - 'python/**'
 
 jobs:
   build:
@@ -20,5 +26,5 @@ jobs:
           pip install pylint
       - name: Run python scripts
         run: |
-          chmod +x run.sh
-          ./run.sh
+          chmod +x run_python.sh
+          ./run_python.sh
