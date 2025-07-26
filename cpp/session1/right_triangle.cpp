@@ -1,11 +1,25 @@
 #include <algorithm>
 #include <cassert>
 #include <iostream>
+#include <array>
 
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  return 0;
+  bool bRetStatus = false;
+  // A triangle cannot have a side with zero or negative length.
+  if (a <= 0 || b <= 0 || c <= 0) {
+    bRetStatus = false;
+  }
+  else
+  {
+    std::array<int, 3> sides = {a, b, c};
+    std::sort(sides.begin(), sides.end());
+    // Check if a^2 + b^2 = c^2 after sorting
+    bRetStatus = (sides[0] * sides[0] + sides[1] * sides[1] == sides[2] * sides[2]);
+
+  }
+  return bRetStatus;
 }
 
 int main() {

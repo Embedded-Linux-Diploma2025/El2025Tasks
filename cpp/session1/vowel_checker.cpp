@@ -1,11 +1,19 @@
 #include <cassert>
 #include <iostream>
+#include <array>
+#include <algorithm> // For std::find
+#include <cctype>    // For std::tolower
 
 bool isVowel(char letter) {
   // write your solution here...
   // Hint: Check if the letter is 'a', 'e', 'i', 'o', 'u' (both uppercase and
   // lowercase)
-  return false;
+  // Convert the character to lowercase to handle both cases easily.
+  char u8Lower_letter = std::tolower(static_cast<unsigned char>(letter));
+
+  const std::array<char, 5> vowels = {'a', 'e', 'i', 'o', 'u'};
+  // Check if the lowercase letter is present in the vowels array.
+  return std::find(vowels.begin(), vowels.end(), u8Lower_letter) != vowels.end();
 }
 
 int main() {

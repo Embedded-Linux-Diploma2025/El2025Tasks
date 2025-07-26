@@ -1,9 +1,11 @@
 #include <cassert>
 #include <iostream>
+#include <algorithm>
 
 int getMaximum(int a, int b, int c) {
   // write your solution here...
-  return 0;
+
+  return std::max({a,b,c});
 }
 
 int main() {

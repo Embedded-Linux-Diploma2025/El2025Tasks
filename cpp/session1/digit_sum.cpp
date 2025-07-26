@@ -1,11 +1,24 @@
 #include <cassert>
 #include <iostream>
+#include <cmath>
 
 int sumDigits(int number) {
   // write your solution here...
   // Hint: Use modulo (%) to get last digit and division (/) to remove last
   // digit Hint: Handle negative numbers appropriately
-  return 0;
+
+  unsigned char temp = 0;
+  unsigned char sum = 0;
+  unsigned int u64Number = std::abs(number);
+
+  while(u64Number)
+  {
+    temp = u64Number % 10;
+    sum += temp;
+    u64Number = u64Number / 10;
+  }
+  
+  return sum;
 }
 
 int main() {
