@@ -5,7 +5,6 @@
 
 int getASCIIValue(char character) {
   // write your solution here...
-
   return static_cast<unsigned int>(character);
 }
 
