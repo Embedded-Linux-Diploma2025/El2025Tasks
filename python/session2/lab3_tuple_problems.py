@@ -16,7 +16,6 @@ def tuple_operations(tuple1, tuple2):
 
 
 
-
 def find_tuple_stats(numbers_tuple):
     """Calculate statistics for a tuple of numbers.
 

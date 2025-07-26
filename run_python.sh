@@ -43,5 +43,5 @@ if [ $? -ne 0 ]; then
     echo "[🟥] Session 3 is not solved yet"
     # exit 1 # comment this line if you want to bypass session3
 else
-    examine_session "session3"
+    examine_session "python/session3"
 fi
