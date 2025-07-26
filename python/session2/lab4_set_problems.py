@@ -32,7 +32,6 @@ def find_unique_elements(list1, list2):
     return (set1 - set2, set2 - set1)
 
 
-
 def remove_vowels_set(text):
     """Remove vowels from text using set operations.
 
