@@ -5,7 +5,12 @@ bool isVowel(char letter) {
   // write your solution here...
   // Hint: Check if the letter is 'a', 'e', 'i', 'o', 'u' (both uppercase and
   // lowercase)
-  return false;
+
+  char lowerLetter=std::tolower(letter);
+  bool isvowel=0;
+  isvowel = (lowerLetter == 'a' || lowerLetter == 'e' || lowerLetter == 'i' || lowerLetter == 'o' || lowerLetter == 'u');
+  return isvowel;
+  // return false; --- IGNORE ---
 }
 
 int main() {

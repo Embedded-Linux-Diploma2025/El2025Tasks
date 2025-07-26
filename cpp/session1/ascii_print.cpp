@@ -5,7 +5,8 @@
 
 int getASCIIValue(char character) {
   // write your solution here...
-  return 0;
+  std::cout << "ASCII value of '" << character << "' is: " << static_cast<int>(character) << "\n";
+  return static_cast<int>(character);
 }
 
 int main() {
