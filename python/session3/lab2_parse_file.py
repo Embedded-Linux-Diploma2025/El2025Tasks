@@ -1,6 +1,7 @@
 """File Parsing Problems - Testing student capability with file parsing and text processing."""
 
 import os
+import re
 
 
 def parse_config_file(file_path):
@@ -17,6 +18,20 @@ def parse_config_file(file_path):
     pattern = r'^([A-Z_][A-Z0-9_:${}]*)\s*=\s*"([^"]*(?:\\[\s\S]*?)*)"'
 
     """
+    config_data = {}
+
+    with open(file_path, "r", encoding="ascii") as file:
+        content = file.read()
+    pattern = r'^([A-Z_][A-Z0-9_:${}]*)\s*=\s*"([^"]*(?:\\[\s\S]*?)*)"'
+
+    # Find all matches
+    matches = re.finditer(pattern, content, re.MULTILINE | re.DOTALL)
+    for match in matches:
+        key = match.group(1).strip()
+        value = match.group(2)
+        config_data[key] = value
+
+    return config_data
 
 
 if __name__ == "__main__":
