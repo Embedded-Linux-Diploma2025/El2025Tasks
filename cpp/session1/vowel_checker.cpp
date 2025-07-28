@@ -5,6 +5,18 @@ bool isVowel(char letter) {
   // write your solution here...
   // Hint: Check if the letter is 'a', 'e', 'i', 'o', 'u' (both uppercase and
   // lowercase)
+  if(letter >= 'A' && letter <= 'Z')
+  {
+    letter = letter + 'a' - 'A';
+  }
+  char vowels[] = {'a', 'e', 'i', 'o', 'u'};
+  for(int i = 0; i<5; i++)
+  {
+    if(vowels[i] == letter)
+    {
+      return true;
+    }
+  }
   return false;
 }
 

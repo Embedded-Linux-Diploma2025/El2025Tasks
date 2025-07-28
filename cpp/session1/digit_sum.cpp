@@ -5,7 +5,17 @@ int sumDigits(int number) {
   // write your solution here...
   // Hint: Use modulo (%) to get last digit and division (/) to remove last
   // digit Hint: Handle negative numbers appropriately
-  return 0;
+  int ans = 0;
+  if(number < 0)
+  {
+    number = number * -1;
+  }
+  while(number)
+  {
+    ans += number%10;
+    number /= 10;
+  }
+  return ans;
 }
 
 int main() {

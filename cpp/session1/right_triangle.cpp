@@ -5,7 +5,23 @@
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  return 0;
+  if (c*c == (a*a + b*b))
+  {
+    return true;
+  }
+  else if (a*a == (c*c + b*b))
+  {
+    return true;
+  }
+  else if (b*b == (a*a + b*b))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+
 }
 
 int main() {
