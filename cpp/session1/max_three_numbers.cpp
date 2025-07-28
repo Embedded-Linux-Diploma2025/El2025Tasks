@@ -2,8 +2,9 @@
 #include <iostream>
 
 int getMaximum(int a, int b, int c) {
-  // write your solution here...
-  return 0;
+  int max = std::max(a,b);
+  max = std::max(max, c);
+  return max;
 }
 
 int main() {
