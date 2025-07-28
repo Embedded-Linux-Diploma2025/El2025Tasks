@@ -5,6 +5,8 @@
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
+  if (a + b <= c || a + c <= b || b + c <= a)
+    return false;
   int max =a;
   int s1 =b;
   int s2=c;
