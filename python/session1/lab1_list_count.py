@@ -2,8 +2,9 @@
 
 
 def count(lst):
-    """Write your solution here. Don't forget to return the result at the end...."""
-
+    """Write your solution here. Don't forget to return the result at the end."""
+    num = lst.count(4)
+    return num
 
 if __name__ == "__main__":
     assert count([1, 2, 3, 4, 5, 4, 6]) == 2, "Test case failed"
