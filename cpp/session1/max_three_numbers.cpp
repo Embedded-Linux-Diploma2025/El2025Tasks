@@ -1,10 +1,13 @@
 #include <cassert>
 #include <iostream>
 
-int getMaximum(int a, int b, int c) {
-  // write your solution here...
-  return 0;
-}
+  int getMaximum(int a, int b, int c) {
+    // write your solution here...
+    int max =a;
+    if (b > max) max =b;
+    if(c> max ) max =c;
+    return max;
+  }
 
 int main() {
   std::cout << "==============================================\n";
