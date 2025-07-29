@@ -17,6 +17,7 @@ examine_session() {
         echo "[🟩] $file ran successfully"
     done
     cd ..
+    cd ..
 }
 
 #----------------- Session 1 -----------------#

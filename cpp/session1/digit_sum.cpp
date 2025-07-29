@@ -1,11 +1,19 @@
 #include <cassert>
 #include <iostream>
+#include <math.h>
 
 int sumDigits(int number) {
   // write your solution here...
   // Hint: Use modulo (%) to get last digit and division (/) to remove last
   // digit Hint: Handle negative numbers appropriately
-  return 0;
+  int Crackednum,DigitSum;
+  Crackednum = abs(number);
+  DigitSum=0;
+  while(Crackednum){
+    DigitSum+=Crackednum%10;
+    Crackednum/=10;
+  }
+  return DigitSum;
 }
 
 int main() {

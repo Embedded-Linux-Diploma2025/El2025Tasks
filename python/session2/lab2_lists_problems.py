@@ -11,6 +11,11 @@ def find_max_min(numbers):
         tuple: (max_value, min_value)
     """
     # Write your solution here
+    if not numbers:
+        return None, None
+    max_value = max(numbers)
+    min_value = min(numbers)
+    return max_value, min_value
 
 
 def reverse_list(items):
@@ -23,6 +28,11 @@ def reverse_list(items):
         list: Reversed list
     """
     # Write your solution here
+    reversed_items = []
+    for item in items:
+        reversed_items.insert(0, item)
+    return reversed_items
+
 
 
 def list_statistics(numbers):
@@ -35,7 +45,11 @@ def list_statistics(numbers):
         dict: Dictionary with sum, average, count
     """
     # Write your solution here
-
+    if not numbers:
+        return {"sum": 0, "average": 0, "count": 0}
+    total = sum(numbers)
+    average = total / len(numbers)
+    return {"sum": total, "average": average, "count": len(numbers)}
 
 def flatten_nested_list(nested_list):
     """Flatten a nested list structure.
@@ -47,6 +61,12 @@ def flatten_nested_list(nested_list):
         list: Flattened list
     """
     # Write your solution here
+    flattened_list = []
+    for sublist in nested_list:
+        for item in sublist:
+            flattened_list.append(item)
+    return flattened_list
+
 
 
 if __name__ == "__main__":
