@@ -1,10 +1,11 @@
-"""Write a python program to access environment variables. TEST1234, TEST1235, TEST1236"""
+""" A python program to access environment variables. TEST1234, TEST1235, TEST1236"""
 
 import os
 
 
 def access_env(env_var):
-    """Write your solution here. Don't forget to return the result at the end."""
+    """Access the environment variable and return its value."""
+    return os.environ.get(env_var)
 
 
 if __name__ == "__main__":

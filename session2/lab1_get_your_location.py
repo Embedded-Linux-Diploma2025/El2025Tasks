@@ -1,10 +1,20 @@
-"""Write a Python program to get info about your location."""
+"""Gt info about the user's location."""
 
 import requests
 
 
 def get_info_location():
-    """Write your solution here. Don't forget to return the result at the end."""
+    """Get information about the user's location using an external API."""
+    try:
+        req = requests.get("https://ipwho.is/", timeout=5).json()
+        lat = req["latitude"]
+        lon = req["longitude"]
+        req["loc"] = f"{lat},{lon}"
+        req["org"] = req["connection"]["org"]
+        return req
+    except requests.RequestException as e:
+        print("Network error:", e)
+        return {}
 
 
 if __name__ == "__main__":

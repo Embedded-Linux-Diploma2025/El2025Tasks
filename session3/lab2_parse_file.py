@@ -1,7 +1,7 @@
 """File Parsing Problems - Testing student capability with file parsing and text processing."""
 
 import os
-
+import re
 
 def parse_config_file(file_path):
     r"""
@@ -17,7 +17,14 @@ def parse_config_file(file_path):
     pattern = r'^([A-Z_][A-Z0-9_:${}]*)\s*=\s*"([^"]*(?:\\[\s\S]*?)*)"'
 
     """
-
+    d = {}
+    with open(file_path, 'r', encoding='utf8') as f:
+        for l in f:
+            if '=' in l:
+                split_res = re.split(r'^([A-Z_][A-Z0-9_:${}]*)\s*=\s*"([^"]*(?:\\[\s\S]*?)*)"', l)
+                d.update({split_res[1]:split_res[2]})
+        f.close()
+    return d
 
 if __name__ == "__main__":
     # Get the path to the template_data.txt file

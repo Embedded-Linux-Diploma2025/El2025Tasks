@@ -1,8 +1,8 @@
-"""Write a Python program to test whether a passed letter is a vowel or not."""
-
+""" A Python program to test whether a passed letter is a vowel or not."""
 
 def vowel(letter):
-    """Write your solution here. Don't forget to return the result at the end."""
+    """Check if the given letter is a vowel."""
+    return letter.lower() in 'aeiou'
 
 
 if __name__ == "__main__":
