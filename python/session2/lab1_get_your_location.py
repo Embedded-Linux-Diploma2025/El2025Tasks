@@ -5,6 +5,11 @@ import requests
 
 def get_info_location():
     """Write your solution here. Don't forget to return the result at the end."""
+    response = requests.get("https://ipinfo.io/json")
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return {"error": "Unable to retrieve location information"}
 
 
 if __name__ == "__main__":
