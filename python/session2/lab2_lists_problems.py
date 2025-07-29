@@ -11,6 +11,7 @@ def find_max_min(numbers):
         tuple: (max_value, min_value)
     """
     # Write your solution here
+#my solution
 
 
 def reverse_list(items):
