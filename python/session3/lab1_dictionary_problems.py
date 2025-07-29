@@ -32,6 +32,11 @@ def count_word_frequency(text):
         dict: Dictionary with word frequencies
     """
     # Write your solution here
+    words = text.split()
+    frequency = {}
+    for word in words:
+        frequency[word] = frequency.get(word, 0) + 1
+    return frequency
 
 
 def dictionary_filtering(students_grades):

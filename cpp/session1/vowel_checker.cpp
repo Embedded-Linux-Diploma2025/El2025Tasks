@@ -12,7 +12,7 @@
 //   return isvowel;
 //   // return false; --- IGNORE ---
 // }
-/* using ranged for ver */
+/* using ranged for ver  */
 bool isVowel(char letter) {
   // write your solution here...
   // Hint: Check if the letter is 'a', 'e', 'i', 'o', 'u' (both uppercase and
