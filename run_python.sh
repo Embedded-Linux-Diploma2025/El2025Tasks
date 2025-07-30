@@ -27,7 +27,7 @@ if [ $? -ne 0 ]; then
     echo "[🟥] Session 2 is not Solved yet"
     exit 1
 else
-    examine_session "python/session2"
+    examine_session "session2"
 fi
 
 #----------------- Session 3 -----------------#
