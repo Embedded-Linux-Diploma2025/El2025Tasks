@@ -50,8 +50,8 @@ def count_elements_in_tuple(data_tuple, element):
     Returns:
         int: Number of occurrences
     """
-    
-    return data_tuple.count(element)
+    result = data_tuple.count(element)
+    return result
 
 
 def tuple_indexing_slicing(data_tuple):
