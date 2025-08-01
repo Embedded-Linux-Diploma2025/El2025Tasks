@@ -1,14 +1,15 @@
 #include <cassert>
 #include <iostream>
+#include <algorithm>
 
 int searchInArray(int arr[], int size, int target) {
-  // write your solution here...
-  // Hint: Iterate through the array and compare each element with target
-  // Hint: Return the index if found, return -1 if not found
-  return -1;
-}
+  // Professional C++ solution using std::find
 
-int main() {
+  auto it = std::find(arr, arr + size, target);
+
+  // If found, return index; otherwise return -1
+  return (it != arr + size) ? std::distance(arr, it) : -1;
+}int main() {
   std::cout << "==============================================\n";
   std::cout << "       ARRAY SEARCH FUNCTION\n";
   std::cout << "==============================================\n\n";

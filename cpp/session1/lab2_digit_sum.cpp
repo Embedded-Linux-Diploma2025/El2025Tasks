@@ -6,10 +6,10 @@
 
 int sumDigits(int number) {
   // Professional C++ solution using std::accumulate and lambda
-
+  
   // Convert to string to work with individual digits
   std::string numStr = std::to_string(std::abs(number));
-
+  
   // Use std::accumulate with lambda to sum digits
   return std::accumulate(numStr.begin(), numStr.end(), 0,
     [](int sum, char digit) {

@@ -5,26 +5,26 @@
 
 bool isRightTriangle(int a, int b, int c) {
   // Professional C++ solution using STL algorithms
-
+  
   // Handle invalid triangles
   if (a <= 0 || b <= 0 || c <= 0) {
     return false;
   }
-
+  
   // Use std::array and std::sort for clean code
   std::array<long long, 3> sides = {
-    static_cast<long long>(a),
-    static_cast<long long>(b),
+    static_cast<long long>(a), 
+    static_cast<long long>(b), 
     static_cast<long long>(c)
   };
-
+  
   std::sort(sides.begin(), sides.end());
-
+  
   // Check triangle inequality
   if (sides[0] + sides[1] <= sides[2]) {
     return false;
   }
-
+  
   // Check Pythagorean theorem with squared values to avoid overflow
   return (sides[0] * sides[0] + sides[1] * sides[1] == sides[2] * sides[2]);
 }int main() {

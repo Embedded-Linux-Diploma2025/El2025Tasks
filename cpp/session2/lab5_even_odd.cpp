@@ -1,13 +1,17 @@
 #include <cassert>
 #include <iostream>
+#include <algorithm>
 
 void findEvenOdd(int arr[], int size, int even[], int odd[], int* evenCount, int* oddCount) {
-  // write your solution here...
-  // Hint: Iterate through the array and check if each number is even (num % 2 == 0) or odd
-  // Hint: Add even numbers to the even array and odd numbers to the odd array
-  // Hint: Update evenCount and oddCount accordingly
-  *evenCount = 0;
-  *oddCount = 0;
+  // Professional C++ solution using std::copy_if and lambdas
+
+  // Use std::copy_if with lambda to separate even numbers
+  auto evenEnd = std::copy_if(arr, arr + size, even, [](int n) { return n % 2 == 0; });
+  *evenCount = static_cast<int>(std::distance(even, evenEnd));
+
+  // Use std::copy_if with lambda to separate odd numbers
+  auto oddEnd = std::copy_if(arr, arr + size, odd, [](int n) { return n % 2 != 0; });
+  *oddCount = static_cast<int>(std::distance(odd, oddEnd));
 }
 
 int main() {

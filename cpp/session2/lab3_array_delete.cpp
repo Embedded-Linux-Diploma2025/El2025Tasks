@@ -1,12 +1,22 @@
 #include <cassert>
 #include <iostream>
+#include <algorithm>
 
 int deleteFromArray(int arr[], int size, int target) {
-  // write your solution here...
-  // Hint: Find the target element and shift all elements after it to the left
-  // Hint: Return the new size of the array after deletion
-  // Hint: If target not found, return original size
-  return size;
+  // Professional C++ solution using std::find and std::copy
+
+  auto it = std::find(arr, arr + size, target);
+
+  // If target not found, return original size
+  if (it == arr + size) {
+    return size;
+  }
+
+  // Use std::copy to shift elements left, overwriting the target
+  std::copy(it + 1, arr + size, it);
+
+  // Return new size (reduced by 1)
+  return size - 1;
 }
 
 int main() {
