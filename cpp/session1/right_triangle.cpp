@@ -1,11 +1,24 @@
 #include <algorithm>
 #include <cassert>
+#include <cmath>
 #include <iostream>
-
-bool isRightTriangle(int a, int b, int c) {
+#include "math.h"
+bool isRightTriangle(int a, int b, int c)
+{
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  return 0;
+  // Ensure a, b, c are positive integers
+  if (a <= 0 || b <= 0 || c <= 0) {
+    return false; // Invalid triangle sides
+  } 
+  // Sort the sides to ensure c is the largest
+  int sides []= {a, b, c};
+  std::sort(sides, sides + 3);  
+  // Check Pythagorean theorem
+  // a² + b² = c²
+  // Note: pow is used to calculate squares 
+  
+  return (pow(sides[0], 2)+pow(sides[1], 2) == pow(sides[2], 2));
 }
 
 int main() {
