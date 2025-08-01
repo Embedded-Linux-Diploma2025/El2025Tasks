@@ -5,7 +5,31 @@
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  return 0;
+  u_int8_t max = 0;
+  u_int8_t min1 = 0,min2 = 0;
+  if((a >= b) && ((a > c) || (b > c))){
+    max = a;
+    min1 = b;
+    min2 = c;
+  }else if((b >= a) && ((a >= c) || (b > c))){
+    max = b;
+    min1 = a;
+    min2 = c;
+  }else if((c >= b) && ((b > a) || (c >= a))){
+    max = c;
+    min1 = b;
+    min2 = a;
+  }else{
+    max = a;
+    min1 = b;
+    min2 = c;
+  }
+  if ((max*max) == ((min1 * min1) + (min2 * min2))){
+    return true;
+  }else{
+    return false;
+  }
+
 }
 
 int main() {

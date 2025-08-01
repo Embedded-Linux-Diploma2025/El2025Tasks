@@ -3,7 +3,16 @@
 
 int getMaximum(int a, int b, int c) {
   // write your solution here...
-  return 0;
+  u_int8_t ret = 0;
+  if((a >= b) && ((a > c) || (b > c))){
+    return a;
+  }else if((b >= a) && ((a >= c) || (b > c))){
+    return b;
+  }else if((c >= b) && ((b > a) || (c >= a))){
+    return c;
+  }else{
+    return a;
+  }
 }
 
 int main() {

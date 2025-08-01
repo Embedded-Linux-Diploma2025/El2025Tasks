@@ -5,6 +5,13 @@ bool isVowel(char letter) {
   // write your solution here...
   // Hint: Check if the letter is 'a', 'e', 'i', 'o', 'u' (both uppercase and
   // lowercase)
+  u_int8_t arr[] ={'a','e','i','o','u','A','E','O','I','U'};
+  for(int i = 0;i < sizeof(arr) ; i++){
+    if(letter == arr[i]){
+      return true;
+    }else{
+    }
+  }
   return false;
 }
 

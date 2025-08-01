@@ -5,7 +5,8 @@
 
 int getASCIIValue(char character) {
   // write your solution here...
-  return 0;
+  //std::cout << (int)character <<std::endl;
+  return (int)character;
 }
 
 int main() {

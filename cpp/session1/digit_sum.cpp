@@ -5,7 +5,15 @@ int sumDigits(int number) {
   // write your solution here...
   // Hint: Use modulo (%) to get last digit and division (/) to remove last
   // digit Hint: Handle negative numbers appropriately
-  return 0;
+  u_int8_t div = 0;
+  u_int8_t sum = 0;
+  number =abs(number);
+  do{
+    div = number % 10;
+    number = number/10;
+    sum += div;
+  }while(0 != number);
+  return sum;
 }
 
 int main() {
