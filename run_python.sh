@@ -23,16 +23,16 @@ pip3 install -r requirements.txt
 #----------------- Session 1 -----------------#
 examine_session "python/session1"
 #----------------- Session 2 -----------------#
-python session2/lab1_get_your_location.py
+python python/session2/lab1_get_your_location.py
 if [ $? -ne 0 ]; then
     echo "[🟥] Session 2 is not Solved yet"
     exit 1
 else
-    examine_session "session2"
+    examine_session "python/session2"
 fi
 
 #----------------- Session 3 -----------------#
-python session3/lab1_dictionary_problems.py
+python python/session3/lab1_dictionary_problems.py
 if [ $? -ne 0 ]; then
     echo "[🟥] Session 3 is not solved yet"
     # exit 1 # comment this line if you want to bypass session3
