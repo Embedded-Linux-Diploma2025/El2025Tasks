@@ -1,9 +1,15 @@
 #include <cassert>
 #include <iostream>
-
-int getMaximum(int a, int b, int c) {
+#include <algorithm>
+int getMaximum(int a, int b, int c) 
+{
   // write your solution here...
-  return 0;
+  int Number [] = {a, b, c};
+  // Sort the numbers to find the maximum
+  std::sort(Number, Number + 3);
+  // Return the last element which is the maximum
+  return Number[2];
+  
 }
 
 int main() {

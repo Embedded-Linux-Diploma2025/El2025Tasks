@@ -1,11 +1,22 @@
 #include <cassert>
+#include <cstdlib>
 #include <iostream>
 
-int sumDigits(int number) {
+int sumDigits(int number) 
+{
   // write your solution here...
   // Hint: Use modulo (%) to get last digit and division (/) to remove last
   // digit Hint: Handle negative numbers appropriately
-  return 0;
+
+  number = abs(number); // Convert to positive if negative
+
+  int mod = number % 10;
+  int div = number / 10;
+  do {
+    mod += div % 10;
+    div = div / 10;
+  } while (div > 0);
+  return mod;
 }
 
 int main() {
