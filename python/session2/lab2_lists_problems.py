@@ -1,6 +1,7 @@
 """List Problems - Testing student capability with list operations."""
 
 
+
 def find_max_min(numbers):
     """Find the maximum and minimum values in a list of numbers.
 
@@ -11,6 +12,10 @@ def find_max_min(numbers):
         tuple: (max_value, min_value)
     """
     # Write your solution here
+    numbers.sort()
+    max_list=numbers[-1]
+    min_list= numbers[0]
+    return max_list ,min_list
 
 
 def reverse_list(items):
@@ -23,6 +28,8 @@ def reverse_list(items):
         list: Reversed list
     """
     # Write your solution here
+    items.reverse()
+    return items
 
 
 def list_statistics(numbers):
@@ -35,6 +42,13 @@ def list_statistics(numbers):
         dict: Dictionary with sum, average, count
     """
     # Write your solution here
+    list_sum=0
+    list_count=0
+    for i in numbers:
+        list_sum+=i
+        list_count+=1
+    list_stats = { "sum" : list_sum, "average" :list_sum/list_count, "count" :  list_count}
+    return list_stats
 
 
 def flatten_nested_list(nested_list):
@@ -47,7 +61,17 @@ def flatten_nested_list(nested_list):
         list: Flattened list
     """
     # Write your solution here
-
+    expanded_list=[]
+    for i in nested_list:
+        if isinstance(i,int):
+            expanded_list.append(i)
+            # print("Appended = ", i)
+        else:
+            rec=flatten_nested_list(i)
+            for i in rec:
+                expanded_list.append(i)
+            # print("Expanded list = ",expanded_list)
+    return expanded_list
 
 if __name__ == "__main__":
     # Test cases

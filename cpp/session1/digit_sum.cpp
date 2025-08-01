@@ -1,11 +1,18 @@
 #include <cassert>
 #include <iostream>
+#include <cstdlib>  // for std::abs
 
 int sumDigits(int number) {
   // write your solution here...
   // Hint: Use modulo (%) to get last digit and division (/) to remove last
   // digit Hint: Handle negative numbers appropriately
-  return 0;
+  number = std::abs(number); // handle negative numbers
+  int sum = 0;
+  while (number > 0) {
+    sum += number % 10;
+    number /= 10;
+  }
+  return sum;
 }
 
 int main() {

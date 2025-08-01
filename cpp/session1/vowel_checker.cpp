@@ -1,11 +1,14 @@
 #include <cassert>
 #include <iostream>
 
+#include <string>
+
 bool isVowel(char letter) {
   // write your solution here...
   // Hint: Check if the letter is 'a', 'e', 'i', 'o', 'u' (both uppercase and
   // lowercase)
-  return false;
+  std::string vowels = "aeiouAEIOU";
+  return vowels.find(letter) != std::string::npos;
 }
 
 int main() {

@@ -2,10 +2,17 @@
 #include <cassert>
 #include <iostream>
 
+#include <math.h>
+
+
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  return 0;
+  int sides[] = {a, b, c};
+  std::sort(sides, sides + 3);
+  if (sides[0] + sides[1] <= sides[2])
+    return false;
+  return sides[0] * sides[0] + sides[1] * sides[1] == sides[2] * sides[2];
 }
 
 int main() {
