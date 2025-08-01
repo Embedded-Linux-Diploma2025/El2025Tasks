@@ -1,11 +1,32 @@
 #include <cassert>
 #include <iostream>
 
+int searchInArray(int arr[], int size, int target) {
+  // write your solution here...
+  // Hint: Iterate through the array and compare each element with target
+  // Hint: Return the index if found, return -1 if not found
+  int found_flag=-1;
+  for(int itr=0; itr<size;itr ++){
+    if(arr[itr]==target){
+      found_flag=itr;
+      break;
+    }
+  }
+  return found_flag;
+}
+
 int deleteFromArray(int arr[], int size, int target) {
   // write your solution here...
   // Hint: Find the target element and shift all elements after it to the left
   // Hint: Return the new size of the array after deletion
   // Hint: If target not found, return original size
+  int index=searchInArray(arr,size,target);
+  if(index!=-1){
+    for(int itr=index;itr<size;itr++){
+      arr[itr]=arr[itr+1];
+    }
+    size--;
+  }
   return size;
 }
 

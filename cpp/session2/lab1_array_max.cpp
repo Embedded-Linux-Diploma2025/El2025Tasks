@@ -5,7 +5,13 @@ int findMaxInArray(int arr[], int size) {
   // write your solution here...
   // Hint: Iterate through the array and keep track of the maximum value
   // Hint: Handle edge cases like empty arrays
-  return 0;
+  int max=arr[0];
+  for (int itr =0; itr<size ;itr++ ){
+    if(max<arr[itr]){
+      max=arr[itr];
+    }
+  }
+  return max;
 }
 
 int main() {

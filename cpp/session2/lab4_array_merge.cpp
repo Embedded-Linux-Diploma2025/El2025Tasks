@@ -5,7 +5,13 @@ int mergeArrays(int arr1[], int size1, int arr2[], int size2, int result[]) {
   // write your solution here...
   // Hint: Copy all elements from arr1 to result, then copy all elements from arr2
   // Hint: Return the total size of the merged array (size1 + size2)
-  return 0;
+  for(int itr=0;itr<size1;itr++){
+    result[itr]=arr1[itr];
+  }
+  for(int itr=0;itr<size2;itr++){
+    result[size1+itr]=arr2[itr];
+  }
+  return size1+size2;
 }
 
 int main() {

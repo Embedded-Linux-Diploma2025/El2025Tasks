@@ -5,7 +5,14 @@ int searchInArray(int arr[], int size, int target) {
   // write your solution here...
   // Hint: Iterate through the array and compare each element with target
   // Hint: Return the index if found, return -1 if not found
-  return -1;
+  int found_flag=-1;
+  for(int itr=0; itr<size;itr ++){
+    if(arr[itr]==target){
+      found_flag=itr;
+      break;
+    }
+  }
+  return found_flag;
 }
 
 int main() {
