@@ -1,11 +1,22 @@
 #include <cassert>
 #include <iostream>
+#include <algorithm>
 
 int searchInArray(int arr[], int size, int target) {
   // write your solution here...
   // Hint: Iterate through the array and compare each element with target
   // Hint: Return the index if found, return -1 if not found
-  return -1;
+  auto element_it = std::find(arr, arr + size, target);
+  int index{0};
+  if(element_it != (arr + size))
+  {
+    index = element_it - arr;
+  }
+  else
+  {
+    index = -1;
+  }
+  return index;
 }
 
 int main() {

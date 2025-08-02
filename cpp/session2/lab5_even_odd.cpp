@@ -6,8 +6,21 @@ void findEvenOdd(int arr[], int size, int even[], int odd[], int* evenCount, int
   // Hint: Iterate through the array and check if each number is even (num % 2 == 0) or odd
   // Hint: Add even numbers to the even array and odd numbers to the odd array
   // Hint: Update evenCount and oddCount accordingly
-  *evenCount = 0;
-  *oddCount = 0;
+  unsigned int even_index{0};
+  unsigned int odd_index{0};
+  for(int i = 0;i < size;i++)
+  {
+    if(arr[i] % 2 == 0)
+    {
+      even[even_index++] = arr[i];
+    }
+    else
+    {
+      odd[odd_index++] = arr[i];
+    }
+  }
+  *evenCount = even_index;
+  *oddCount = odd_index;
 }
 
 int main() {
