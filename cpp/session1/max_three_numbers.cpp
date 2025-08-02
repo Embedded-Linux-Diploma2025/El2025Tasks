@@ -1,9 +1,22 @@
+// Copyright 2025 shrook yassin
 #include <cassert>
 #include <iostream>
 
 int getMaximum(int a, int b, int c) {
   // write your solution here...
-  return 0;
+  if (a >= b && a > c) {
+    return a;
+  } else if (a > b && a >= c) {
+    return a;
+  } else if (b >= a && b > c) {
+    return b;
+  } else if (b > a && b >= c) {
+    return b;
+  } else if (b >= a && b >= c) {
+    return b;
+  } else {
+    return c;
+  }
 }
 
 int main() {

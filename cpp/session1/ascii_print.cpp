@@ -1,3 +1,4 @@
+// Copyright 2025 shrook yassin
 #include <cassert>
 #include <iomanip>
 #include <iostream>
@@ -5,7 +6,8 @@
 
 int getASCIIValue(char character) {
   // write your solution here...
-  return 0;
+  int asci = static_cast<int>(character);
+  return asci;
 }
 
 int main() {

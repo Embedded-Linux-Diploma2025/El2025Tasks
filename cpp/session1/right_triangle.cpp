@@ -1,3 +1,4 @@
+// Copyright 2025 shrook yassin
 #include <algorithm>
 #include <cassert>
 #include <iostream>
@@ -5,8 +6,14 @@
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  return 0;
+
+  if ((c*c + b*b == a*a) || (c*c + a*a == b*b) || (b*b + a*a == c*c)) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
 
 int main() {
   std::cout << "==============================================\n";
@@ -35,7 +42,7 @@ int main() {
   // Test scaled Pythagorean triples
   assert(isRightTriangle(6, 8, 10) == true);   // 3-4-5 * 2
   assert(isRightTriangle(9, 12, 15) == true);  // 3-4-5 * 3
-  assert(isRightTriangle(10, 24, 26) == true); // 5-12-13 * 2
+  assert(isRightTriangle(10, 24, 26) == true);  // 5-12-13 * 2
 
   // Test non-right triangles
   assert(isRightTriangle(1, 2, 3) == false);
