@@ -30,13 +30,12 @@ int deleteFromArray(int arr[], int size, int target) {
     return size;
   }
 
-  size -=1;
+  size = size -1;
   
   for (int i = index; i < size; i++)
   {
     arr[i] = arr[i+1];
   }
-  
   return size;
   
 }
