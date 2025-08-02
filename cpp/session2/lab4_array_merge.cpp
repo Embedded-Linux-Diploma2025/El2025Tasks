@@ -5,10 +5,26 @@ int mergeArrays(int arr1[], int size1, int arr2[], int size2, int result[]) {
   // write your solution here...
   // Hint: Copy all elements from arr1 to result, then copy all elements from arr2
   // Hint: Return the total size of the merged array (size1 + size2)
-  return 0;
+  // Copy elements from arr1
+    for (int i = 0; i < size1; ++i) {
+        result[i] = arr1[i];
+    }
+
+    // Copy elements from arr2
+    for (int i = 0; i < size2; ++i) {
+        result[size1 + i] = arr2[i];
+    }
+
+    return size1 + size2;
 }
 
 int main() {
+
+  int arr1[] = {1, 2, 3};
+  int arr2[] = {4, 5, 6};
+  int result[10];
+  int newSize = mergeArrays(arr1, 3, arr2, 3, result);
+
   std::cout << "==============================================\n";
   std::cout << "       ARRAY MERGE FUNCTION\n";
   std::cout << "==============================================\n\n";

@@ -1,13 +1,47 @@
 #include <cassert>
 #include <iostream>
 
+int searchInArray(int arr[], int size, int target) {
+  // write your solution here...
+  // Hint: Iterate through the array and compare each element with target
+  // Hint: Return the index if found, return -1 if not found
+  if(size == 0)
+  {
+     return -1;
+  }
+  for(int i = 0; i< size; i++)
+  {
+    if(arr[i] == target)
+    {
+      return i;
+    }
+  }
+  return -1;
+}
+
 int deleteFromArray(int arr[], int size, int target) {
   // write your solution here...
   // Hint: Find the target element and shift all elements after it to the left
   // Hint: Return the new size of the array after deletion
   // Hint: If target not found, return original size
+  auto index = searchInArray(arr, size, target);
+  if(index == -1)
+  {
+    return size;
+  }
+
+  size -=1;
+  
+  for (int i = index; i < size; i++)
+  {
+    arr[i] = arr[i+1];
+  }
+  
   return size;
+  
 }
+
+
 
 int main() {
   std::cout << "==============================================\n";

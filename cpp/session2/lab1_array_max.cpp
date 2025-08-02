@@ -2,10 +2,16 @@
 #include <iostream>
 
 int findMaxInArray(int arr[], int size) {
-  // write your solution here...
-  // Hint: Iterate through the array and keep track of the maximum value
-  // Hint: Handle edge cases like empty arrays
-  return 0;
+  if(size == 0){
+     return 0;
+  }
+  auto max = arr[0];
+  for(int i = 1; i < size; i++){
+    if(max < arr[i]){
+      max = arr[i];
+    }
+  }
+  return max;
 }
 
 int main() {
