@@ -1,11 +1,24 @@
 #include <cassert>
 #include <iostream>
 
-int findMaxInArray(int arr[], int size) {
-  // write your solution here...
-  // Hint: Iterate through the array and keep track of the maximum value
-  // Hint: Handle edge cases like empty arrays
-  return 0;
+int findMaxInArray(int arr[], int size) 
+{
+
+  int max_value = arr[0];
+  if (size <= 0) {
+    return -1; // Return -1 for empty array
+  } else if (size == 1) {
+    return arr[0]; // If only one element, return it as max
+  } else if (size == 2) {
+    return (arr[0] > arr[1]) ? arr[0] : arr[1]; // Compare two elements
+  } else {
+    for (int i = 1; i < size; ++i) {
+      if (arr[i] > max_value) {
+        max_value = arr[i];
+      }
+    }
+  }
+  return max_value;
 }
 
 int main() {

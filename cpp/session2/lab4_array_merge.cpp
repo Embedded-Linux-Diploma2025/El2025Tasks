@@ -1,11 +1,13 @@
 #include <cassert>
+#include <cstring>
 #include <iostream>
 
 int mergeArrays(int arr1[], int size1, int arr2[], int size2, int result[]) {
-  // write your solution here...
-  // Hint: Copy all elements from arr1 to result, then copy all elements from arr2
-  // Hint: Return the total size of the merged array (size1 + size2)
-  return 0;
+
+  memcpy(result, arr1 ,size1 * sizeof(int)); // Copy elements from arr1 to result
+  memcpy(&result[size1], arr2, size2 * sizeof(int)); // Copy elements from arr2 to result
+  // The result array now contains all elements from both arrays
+  return size1 + size2; // Return the total size of the merged array
 }
 
 int main() {
