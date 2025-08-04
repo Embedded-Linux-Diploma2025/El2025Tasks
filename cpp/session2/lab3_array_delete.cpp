@@ -2,11 +2,27 @@
 #include <iostream>
 
 int deleteFromArray(int arr[], int size, int target) {
-  // write your solution here...
-  // Hint: Find the target element and shift all elements after it to the left
-  // Hint: Return the new size of the array after deletion
-  // Hint: If target not found, return original size
-  return size;
+  // Check if the array size is valid
+  int index = -1;
+  
+  if (size <= 0) {
+    return size; // If size is zero or negative, nothing to delete
+  }
+  for (int i = 0; i < size; i++) {
+    if (arr[i] == target) {
+      index = i; // Found the target, mark its index
+      break;
+    }
+  }
+  if (index == -1) {
+    return size; // Target not found, return original size
+  } else {
+    for (int i = index; i < size - 1; i++) {
+      arr[i] = arr[i + 1]; // Shift elements to the left
+    }
+    return size - 1; // Return new size after deletion
+  }
+
 }
 
 int main() {
