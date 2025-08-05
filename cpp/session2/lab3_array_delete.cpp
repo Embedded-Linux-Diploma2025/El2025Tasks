@@ -6,7 +6,24 @@ int deleteFromArray(int arr[], int size, int target) {
   // Hint: Find the target element and shift all elements after it to the left
   // Hint: Return the new size of the array after deletion
   // Hint: If target not found, return original size
-  return size;
+  for (int i = 0; i < size; i++)
+  {
+    if (arr[i] == target)
+    {
+     int target = i;
+     for (int i = target; i < size-1; i++){
+     arr[i] = arr[i + 1];
+     }
+     size = size - 1;
+     break;
+    }
+    else
+    {
+      //do nothing
+    }
+  }
+  
+  return size; 
 }
 
 int main() {
