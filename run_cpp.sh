@@ -53,7 +53,7 @@ examine_cpp_session "cpp/session1"
 
 #----------------- Session 2 -----------------#
 echo "🎯 Testing C++ Session 2..."
-#examine_cpp_session "cpp/session2"
+examine_cpp_session "cpp/session2"
 
 echo "==============================================";
 echo "[🎉] All C++ tests completed successfully!";

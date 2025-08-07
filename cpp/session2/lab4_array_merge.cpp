@@ -5,7 +5,25 @@ int mergeArrays(int arr1[], int size1, int arr2[], int size2, int result[]) {
   // write your solution here...
   // Hint: Copy all elements from arr1 to result, then copy all elements from arr2
   // Hint: Return the total size of the merged array (size1 + size2)
-  return 0;
+  int totalSize = size1 + size2;
+  if (size1 < 0 || size2 < 0) {
+    std::cerr << "Error: Invalid array sizes.\n";
+    totalSize = 0; // Return 0 for invalid sizes
+  }
+  else{
+    int index = 0;
+  // Copy elements from arr1 to result
+  for (int i = 0; i < size1; ++i) {
+    result[index++] = arr1[i];
+  }
+  // Copy elements from arr2 to result
+  for (int i = 0; i < size2; ++i) {
+    result[index++] = arr2[i];
+  }
+  // Ensure result array is filled correctly
+  assert(index == totalSize);
+  }
+  return totalSize;
 }
 
 int main() {

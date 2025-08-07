@@ -1,11 +1,19 @@
 #include <cassert>
 #include <iostream>
+#include <algorithm>
 
 int findMaxInArray(int arr[], int size) {
-  // write your solution here...
-  // Hint: Iterate through the array and keep track of the maximum value
-  // Hint: Handle edge cases like empty arrays
-  return 0;
+  if (size <= 0) {
+    // Handle empty array case
+    std::cerr << "Error: Array is empty.\n";
+    return -1;  // Meaningful value indicating empty array
+  }
+
+  int maxVal = arr[0];
+  for (int i = 1; i < size; ++i) {
+    maxVal = std::max(maxVal, arr[i]);
+  }
+  return maxVal;
 }
 
 int main() {

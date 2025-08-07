@@ -3,9 +3,28 @@
 
 int deleteFromArray(int arr[], int size, int target) {
   // write your solution here...
-  // Hint: Find the target element and shift all elements after it to the left
+  // Hint: Find  first occurance of the target element and shift all elements after it to the left
   // Hint: Return the new size of the array after deletion
   // Hint: If target not found, return original size
+  if (size <= 0) {
+    std::cerr << "Error: Array is empty.\n";   
+  }
+  else
+  {
+    int i = 0;
+    while (i < size) {
+      if (arr[i] == target) {
+        // Shift elements to the left
+        for (int j = i; j < size - 1; ++j) {
+          arr[j] = arr[j + 1];
+        }
+        --size; // Decrease size
+        //continue; // Stay at the same index
+        break;
+      }
+      ++i;
+    }
+  }  
   return size;
 }
 
