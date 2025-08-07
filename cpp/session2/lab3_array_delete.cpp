@@ -10,13 +10,13 @@ int deleteFromArray(int arr[], int size, int target) {
     }
     
   
-    for(int i = 0 ;i<size; i++)
+    for(int i = 0; i < size; i++)
     {
       if (arr[i]==target)
         {
           index=i; 
           break;
-          }
+        }
     }
   
     if (index == -1) return size;

@@ -1,10 +1,18 @@
 #include <cassert>
 #include <iostream>
+#include <array>
+#include <algorithm>
+
 
 bool isVowel(char letter) {
   // write your solution here...
   // Hint: Check if the letter is 'a', 'e', 'i', 'o', 'u' (both uppercase and
   // lowercase)
+  std::array <char,10>  vouls {'a','e','i','o','u','A','E','I','O','U'} ;
+  for(char char1 : vouls)
+  { 
+    if(letter == char1) return true;
+  }
   return false;
 }
 
