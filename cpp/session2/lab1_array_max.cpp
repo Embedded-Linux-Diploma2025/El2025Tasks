@@ -1,11 +1,23 @@
+#include <algorithm>
 #include <cassert>
 #include <iostream>
 
 int findMaxInArray(int arr[], int size) {
+  if(size == 0)
+  {
+    //std::cerr <<"size is invalid" << std::endl;
+    return -1;
+  }
+  int max=arr[0];
+
+  for(int i = 0 ;i<size; i++){
+    max = (arr[i]>max)? arr[i] : max ;
+  }
+  
   // write your solution here...
   // Hint: Iterate through the array and keep track of the maximum value
   // Hint: Handle edge cases like empty arrays
-  return 0;
+  return max;
 }
 
 int main() {

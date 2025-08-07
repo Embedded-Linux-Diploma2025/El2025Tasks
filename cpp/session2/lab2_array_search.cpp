@@ -2,6 +2,19 @@
 #include <iostream>
 
 int searchInArray(int arr[], int size, int target) {
+  if(size == 0)
+  {
+    //std::cerr <<"size is invalid" << std::endl;
+    return -1;
+  }
+  
+
+  for(int i = 0 ;i<size; i++){
+    if (arr[i]==target) return i; 
+    return i;
+  }
+  
+  
   // write your solution here...
   // Hint: Iterate through the array and compare each element with target
   // Hint: Return the index if found, return -1 if not found

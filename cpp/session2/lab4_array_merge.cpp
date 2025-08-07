@@ -2,10 +2,23 @@
 #include <iostream>
 
 int mergeArrays(int arr1[], int size1, int arr2[], int size2, int result[]) {
+  // if(size1==0 || size2==0){
+  //   return -1 ;
+  // }
+  int index=0;
+
+  for (index ; index<size1;index++){
+    result[index] = arr1[index];
+  }
+  for (int i=0;i<size2;i++){
+    result[index]=arr2[i];
+    index++;
+  }
+ 
   // write your solution here...
   // Hint: Copy all elements from arr1 to result, then copy all elements from arr2
   // Hint: Return the total size of the merged array (size1 + size2)
-  return 0;
+  return size1+size2;
 }
 
 int main() {

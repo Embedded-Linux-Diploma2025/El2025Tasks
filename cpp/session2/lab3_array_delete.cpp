@@ -2,13 +2,41 @@
 #include <iostream>
 
 int deleteFromArray(int arr[], int size, int target) {
-  // write your solution here...
-  // Hint: Find the target element and shift all elements after it to the left
-  // Hint: Return the new size of the array after deletion
-  // Hint: If target not found, return original size
-  return size;
-}
-
+    int index =-1; 
+    if(size == 0)
+    {
+      //std::cerr <<"size is invalid" << std::endl;
+      return -1;
+    }
+    
+  
+    for(int i = 0 ;i<size; i++)
+    {
+      if (arr[i]==target)
+        {
+          index=i; 
+          break;
+          }
+    }
+  
+    if (index == -1) return size;
+  
+  
+    for (int i = index ; i < size-1 ; i++)
+    {
+      
+        arr[i] =arr[i + 1];
+      if (i == size-1  ) arr[size-1] = 0; 
+    }
+    
+    
+    
+    // write your solution here...
+    // Hint: Find the target element and shift all elements after it to the left
+    // Hint: Return the new size of the array after deletion
+    // Hint: If target not found, return original size
+    return size-1;
+  }
 int main() {
   std::cout << "==============================================\n";
   std::cout << "       ARRAY DELETE FUNCTION\n";
