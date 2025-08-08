@@ -3,7 +3,7 @@
 
 def find_max_min(numbers):
     """Find the maximum and minimum values in a list of numbers.
-
+    
     Args:
         numbers (list): List of numbers
 
@@ -11,6 +11,7 @@ def find_max_min(numbers):
         tuple: (max_value, min_value)
     """
     # Write your solution here
+    return ((max(numbers),min(numbers)))
 
 
 def reverse_list(items):
@@ -23,7 +24,7 @@ def reverse_list(items):
         list: Reversed list
     """
     # Write your solution here
-
+    return items[::-1]
 
 def list_statistics(numbers):
     """Calculate basic statistics for a list of numbers.
@@ -35,6 +36,7 @@ def list_statistics(numbers):
         dict: Dictionary with sum, average, count
     """
     # Write your solution here
+    return {"sum":sum(numbers),"average":sum(numbers)/len(numbers),"count":len(numbers)}
 
 
 def flatten_nested_list(nested_list):
@@ -47,6 +49,11 @@ def flatten_nested_list(nested_list):
         list: Flattened list
     """
     # Write your solution here
+    myresult=[]
+    for i in nested_list:
+        myresult.extend(i)
+    return myresult
+
 
 
 if __name__ == "__main__":

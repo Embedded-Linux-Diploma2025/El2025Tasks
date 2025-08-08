@@ -1,11 +1,23 @@
 #include <algorithm>
+#include <cmath>
 #include <cassert>
 #include <iostream>
 
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
-  return 0;
+  if (((pow(a,2) + pow(b,2)) == pow(c,2)) ||
+      ((pow(a,2) + pow(c,2)) == pow(b,2)) ||
+      ((pow(c,2) + pow(b,2)) == pow(a,2))
+    )
+
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }
 
 int main() {

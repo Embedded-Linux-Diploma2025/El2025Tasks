@@ -5,13 +5,7 @@ examine_cpp_session() {
     cd "$session_dir" || exit 1
     
     echo "🔧 Compiling and testing C++ files in $session_dir..."
-    lab1_file=$(find . -iname "lab1_*.cpp")
-    g++ -Wall -Wextra -std=c++17  "$lab1_file"
-    if [ $? -ne 0 ]; then
-        echo "[🟥] Error compiling $lab1_file"
-        return  1
-    fi
-    rm a.out
+    
     for file in *.cpp; do
         if [ ! -f "$file" ]; then
             echo "⚠️  No .cpp files found in $session_dir"

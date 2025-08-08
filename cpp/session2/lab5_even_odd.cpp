@@ -8,7 +8,23 @@ void findEvenOdd(int arr[], int size, int even[], int odd[], int* evenCount, int
   // Hint: Update evenCount and oddCount accordingly
   *evenCount = 0;
   *oddCount = 0;
+
+  for (int i = 0;i <size ;i++)
+  {
+    if (0 == arr[i] % 2)
+    {
+      even[*evenCount] = arr[i];
+      (*evenCount)++;
+    }
+    else
+    {
+      odd[*oddCount] = arr[i];
+      (*oddCount)++;
+    }
+
+  }
 }
+
 
 int main() {
   std::cout << "==============================================\n";

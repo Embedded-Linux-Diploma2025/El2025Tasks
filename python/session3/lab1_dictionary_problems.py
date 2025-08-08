@@ -12,6 +12,20 @@ def dictionary_operations(dict1, dict2):
         dict: Dictionary with merged, common_keys, and unique_keys
     """
     # Write your solution here
+    #Merged Dictionaries
+    lresult ={}
+    mergedict={}
+    mergedict.update(dict1)
+    mergedict.update(dict2)
+    lresult['merged'] = mergedict
+    #common Keys
+    commonkeys = set(dict1.keys()).intersection(set(dict2.keys()))
+    lresult['common_keys'] = commonkeys
+    #Unique Keys
+    uniquekeys =set(dict1.keys()).symmetric_difference(set(dict2.keys()))
+    lresult['unique_keys'] = uniquekeys
+    return lresult
+
 
 
 def count_word_frequency(text):
@@ -24,6 +38,13 @@ def count_word_frequency(text):
         dict: Dictionary with word frequencies
     """
     # Write your solution here
+    lresult ={}
+    #split string with space seperator and store them in a list
+    lwords =text.split(" ")
+    #count the frequency of each word in the text
+    for item in lwords:
+        lresult[item] =lwords.count(item)
+    return lresult
 
 
 def dictionary_filtering(students_grades):
@@ -36,6 +57,11 @@ def dictionary_filtering(students_grades):
         dict: Dictionary with students who have grades >= 70
     """
     # Write your solution here
+    lresult={}
+    for key in students_grades:
+        if students_grades[key] >=70 :
+            lresult[key]=students_grades[key]
+    return lresult
 
 
 def nested_dictionary_access(nested_dict, keys_path):
@@ -49,6 +75,16 @@ def nested_dictionary_access(nested_dict, keys_path):
         any: Value at the specified path, or None if path doesn't exist
     """
     # Write your solution here
+    lvalue = nested_dict
+    for key in keys_path:
+        lvalue = lvalue.get(key,{})
+    if lvalue == "found":
+        lresult = lvalue
+    else:
+        lresult = None
+    return lresult
+
+
 
 
 if __name__ == "__main__":

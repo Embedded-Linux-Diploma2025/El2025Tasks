@@ -1,11 +1,14 @@
 #include <cassert>
 #include <iostream>
+#include <algorithm> 
 
 int findMaxInArray(int arr[], int size) {
   // write your solution here...
   // Hint: Iterate through the array and keep track of the maximum value
   // Hint: Handle edge cases like empty arrays
-  return 0;
+  auto it = std::max_element(arr,arr+size);
+  //std::cout << *it <<std::endl;
+  return *it;
 }
 
 int main() {
@@ -13,7 +16,7 @@ int main() {
   std::cout << "       ARRAY MAXIMUM FINDER\n";
   std::cout << "==============================================\n\n";
 
-  // Test the findMaxInArray function
+  // Test the findMaxInArray functiond
   // Test basic arrays
   {
     int arr1[] = {1, 2, 3, 4, 5};

@@ -1,11 +1,19 @@
 #include <cassert>
 #include <iostream>
-
+#define ABS(a) ((a < 0) ? (-a) : (a))
 int sumDigits(int number) {
   // write your solution here...
   // Hint: Use modulo (%) to get last digit and division (/) to remove last
   // digit Hint: Handle negative numbers appropriately
-  return 0;
+  int sum = 0;
+  number = ABS (number);
+  while(number != 0)
+  {
+    sum += number % 10 ;
+    number = number / 10;
+    //std ::cout << sum << ":" << number <<std::endl;
+  }
+  return sum;
 }
 
 int main() {

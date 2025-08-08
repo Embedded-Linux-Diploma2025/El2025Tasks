@@ -1,10 +1,19 @@
 #include <cassert>
 #include <iostream>
+#include <algorithm>
 
 int searchInArray(int arr[], int size, int target) {
   // write your solution here...
   // Hint: Iterate through the array and compare each element with target
   // Hint: Return the index if found, return -1 if not found
+  auto it = std::find(arr , arr + size , target);
+  for (int i = 0;i < size ;i++)
+  {
+    if (*it == arr[i])
+    {
+      return i;
+    }
+  }
   return -1;
 }
 
